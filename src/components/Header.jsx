@@ -4,18 +4,23 @@ import {BsFillMoonStarsFill } from 'react-icons/bs'
 import { BiSun} from 'react-icons/bi'
 // import {GrHomeOption} from  'react-icons/gr'
 import {ImSpoonKnife} from 'react-icons/im'
-import {AiFillHome} from 'react-icons/ai'
-import {GiHamburger , GiNoodles , GiFullPizza , GiSheep } from 'react-icons/gi'
+import {AiFillHome , AiOutlineClose} from 'react-icons/ai'
+import {GiHamburgerMenu , GiHamburger , GiNoodles , GiFullPizza , GiSheep } from 'react-icons/gi'
 import{Link, useNavigate} from 'react-router-dom'
 
 import { useState } from 'react'
+import NvaRes from './NvaRes'
 
 
 function Header() {
     const checkRef = useRef()
     const navigate = useNavigate()
     const [darkMode , setDarkMode] = useState(false)
- 
+    const [active  ,setActive] = useState(false)
+    const showMenu = ()=>{
+        setActive(!active)
+    }
+
     const handleClick = (e)=>{
         (checkRef.current.click())
         setDarkMode((x)=> !x)
@@ -24,10 +29,16 @@ function Header() {
   return (
 
     <div className='bg-gray-100'>
-        <div className="header container flex py-5 justify-between  ">
-                <div  className="flex items-center gap-1 cursor-pointer "  onClick={()=> navigate('/') }>
+        <div className="header container flex sm:flex sm:justify-between sm:items-center md:flex py-5 justify-between  items-center">
+                <div  className="hidden md:flex items-center gap-1 cursor-pointer"  onClick={()=> navigate('/') }>
                     <ImSpoonKnife className=' text-5xl bg-blue-700 rounded-full p-2 text-white  hover:animate-spin ' />
                     <span>Reciepes</span>
+                </div>
+             <div className="md:hidden">
+              
+                {/* className="md:hidden text-4xl text-gray-600 my-4 sm:inline " */}
+                    <NvaRes showMenu={showMenu} active={active} className='md:hidden sm:flex ' />
+                    
                 </div>
                 <div className="capitalize gap-9 items-start text-center justify-center hidden  md:block md:flex">
                 
@@ -37,11 +48,10 @@ function Header() {
                 <Link to=''><GiFullPizza className='m-auto my-2 text-2xl text-red-400'/>italyan</Link>
                 <Link to=''><GiSheep className='m-auto my-2 text-2xl text-amber-600'/>arabian</Link>
                 </div>
-
                 <div >
                     {darkMode ? 
-                                <BiSun onClick={handleClick} className=' icon cursor-pointer text-4xl my-3 text-red-200 '/>:
-                                <BsFillMoonStarsFill onClick={handleClick} className=' icon cursor-pointer text-4xl my-3 text-gray-600 ' /> 
+                                <BiSun onClick={handleClick} className='  icon cursor-pointer text-4xl my-3 text-red-200 '/>:
+                                <BsFillMoonStarsFill onClick={handleClick} className='  icon cursor-pointer text-4xl my-3 text-gray-600 ' /> 
                      }
                     <input type="checkbox" name='check' ref={checkRef} className="hidden" />
                 </div>
