@@ -31,7 +31,7 @@ function Home() {
     if(isError){
       console.log(message);
     }
-    } , [ isError ,message , dispatch , recipes ])
+    } , [ isError ,message , dispatch , recipes , dessert ,veggi ])
 
     const optionSlide = {
       // type:'loop',
@@ -54,9 +54,9 @@ function Home() {
        </div>
     {/* ppular */}
        <div className='md:container sm:w-85 sm:px-3 my-24 '>
-          <h3 className ='text-4xl text-center py-4 my-2 bg-slate-200 bg-opacity-50'>Popular Food</h3>
+          <h3 className ='text-4xl text-center py-4 my-2 bg-gradient-to-b from-orange-300 to-gray-300'>Popular Food</h3>
 
-          <div className=" md:container ">
+          <div className=" md:container  ">
           <Splide  options={optionSlide} >
             { recipes ?
               recipes.map(recip =>{
@@ -80,7 +80,7 @@ function Home() {
        {/* vegg */}
 
         <div className=' md:container  sm:w-85 sm:px-3 my-24'>
-          <h3 className ='text-4xl text-center py-4 my-2 bg-slate-200 bg-opacity-50'>Vagatarian Food</h3>
+          <h3 className ='text-4xl text-center py-4 my-2 bg-gradient-to-b from-orange-300 to-gray-300'>Vagatarian Food</h3>
 
           <div className=" md:container ">
           <Splide  options={optionSlide} >
@@ -105,7 +105,7 @@ function Home() {
        {/* candy */}
 
        <div className='md:container  sm:w-85 sm:px-3 my-24 '>
-          <h3 className ='text-4xl text-center py-4 my-2 bg-slate-200 bg-opacity-50'>Dessert</h3>
+          <h3 className ='text-4xl text-center py-4 my-2 bg-gradient-to-b from-orange-300 to-gray-300'>Dessert</h3>
 
           <div className=" md:container ">
           <Splide  options={optionSlide} >
