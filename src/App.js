@@ -10,11 +10,7 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/" element={<Home/>}/>  
-          <Route path="/vegatarian" element />  
-          {/* <Route path="" element={} />   */}
-          {/* <Route path="" element={} />   */}
-          
+          <Route path="/" element={<Home/>}/>     
         </Routes>  
       </Router> 
     </>

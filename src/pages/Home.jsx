@@ -1,7 +1,47 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getDessert, GetRecipes, getVeggi, reset } from '../redux/slices/recipesSlice';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/react-splide/css/skyblue';
+import Spinner from '../components/Spinner';
 
 
 function Home() {
+  const dispatch  = useDispatch()
+  
+  const { isLoading , isSuccess  , isError  , message ,recipes , veggi , dessert} = useSelector(state => state.recip)
+ 
+
+
+
+  
+  useEffect(()=>{    
+    if(!recipes || recipes == ''){
+      dispatch(GetRecipes())
+    }
+
+    if(!veggi || veggi == ''){
+      dispatch(getVeggi())
+    }
+
+    if(!dessert || dessert == ''){
+      dispatch(getDessert())
+    }
+    if(isError){
+      console.log(message);
+    }
+    } , [ isError ,message , dispatch , recipes ])
+
+    const optionSlide = {
+      // type:'loop',
+
+      gap:'.5rem' ,
+      perPage: 3,
+      // pagination:false ,
+      arrows:false
+    } 
+  
   return (
       <div>
         <div className=" bg-[url('./assets/cover.jpg')] bg-cover bg-center h-96 justify-center bg-fixed items-center flex flex-col gap-2 relative ">
@@ -12,10 +52,79 @@ function Home() {
           </div>
           
        </div>
+    {/* ppular */}
+       <div className='md:container sm:w-85 sm:px-3 my-24 '>
+          <h3 className ='text-4xl text-center py-4 my-2 bg-slate-200 bg-opacity-50'>Popular Food</h3>
 
+          <div className=" md:container ">
+          <Splide  options={optionSlide} >
+            { recipes ?
+              recipes.map(recip =>{
+                  return(
+                    <SplideSlide key={recip.id} className='h-56'>
+                      <img className='rounded-md h-full w-full' src={recip.image} alt="" />
+                      <div className='absolute md:text-xl sm:text-sm text-center justify-center items-center bottom-5 w-full bg-gray-300 bg-opacity-50 ' >
+                        <p>{recip.title}</p>
+                      </div>
+                    </SplideSlide >
+                  )
+              })
+              :
+              <Spinner className='w-full' />
+            }  
+          </Splide>
+          </div>
+        </div>
+           
+       
+       {/* vegg */}
 
-        <div className='container'>
-          <h3>vagatarian food</h3>
+        <div className=' md:container  sm:w-85 sm:px-3 my-24'>
+          <h3 className ='text-4xl text-center py-4 my-2 bg-slate-200 bg-opacity-50'>Vagatarian Food</h3>
+
+          <div className=" md:container ">
+          <Splide  options={optionSlide} >
+            { veggi ?
+              veggi.map(veg =>{
+                  return(
+                    <SplideSlide key={veg.id} className='h-56'>
+                      <img className='rounded-md h-full w-full' src={veg.image} alt="" />
+                      <div className='absolute md:text-xl sm:text-sm text-center justify-center items-center bottom-5 w-full bg-gray-300 bg-opacity-50 ' >
+                        <p>{veg.title}</p>
+                      </div>
+                    </SplideSlide>
+                  )
+              })
+              :
+              <Spinner/>
+            }  
+          </Splide>
+          </div>
+        </div>
+
+       {/* candy */}
+
+       <div className='md:container  sm:w-85 sm:px-3 my-24 '>
+          <h3 className ='text-4xl text-center py-4 my-2 bg-slate-200 bg-opacity-50'>Dessert</h3>
+
+          <div className=" md:container ">
+          <Splide  options={optionSlide} >
+            { dessert ?
+              dessert.map(dess =>{
+                  return(
+                    <SplideSlide key={dess.id} className='h-56'>
+                      <img className='rounded-md h-full w-full' src={dess.image} alt="" />
+                      <div className='absolute md:text-xl sm:text-sm text-center justify-center items-center bottom-5 w-full bg-gray-300 bg-opacity-50 ' >
+                        <p>{dess.title}</p>
+                      </div>
+                    </SplideSlide>
+                  )
+              })
+              :
+              <Spinner/>
+            }  
+          </Splide>
+          </div>
         </div>
       </div>
   )
