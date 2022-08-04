@@ -29,26 +29,29 @@ function Header() {
     const [active  ,setActive] = useState(false)
     const showMenu = ()=>{
         setActive(!active)
+       
     }
 
 
 
     const handleClick = (e)=>{
         (checkRef.current.click())
-        setDarkMode((x)=> !x)
+        
+        setDarkMode((darkMode)=> !darkMode)
+         localStorage.setItem('DarkMode' , JSON.stringify(darkMode))
        
     }
   return (
 
     <div className='bg-gray-100'>
         <div className="header container flex sm:flex sm:justify-between sm:items-center md:flex py-5 justify-between  items-center">
-                <div  className="hidden md:flex items-center gap-1 cursor-pointer"  onClick={()=> navigate('/') }>
+                <div  className="flex items-center gap-1 cursor-pointer"  onClick={()=> navigate('/') }>
                     <ImSpoonKnife className=' text-5xl bg-gradient-to-t from-orange-300 to-red-500 rounded-full p-2 text-white  hover:animate-spin ' />
-                    <span>Reciepes</span>
+                    <span className='sm:hidden' >Reciepes</span>
                 </div>
              <div className="md:hidden">
               
-                {/* className="md:hidden text-4xl text-gray-600 my-4 sm:inline " */}
+        
                     <NvaRes showMenu={showMenu} active={active} setActive={setActive} className='md:hidden sm:flex ' />
                     
                 </div>
@@ -60,13 +63,7 @@ function Header() {
                 <Link onClick={resetRed} to='/cuisine/Chinese'><GiNoodles className='m-auto my-2 text-2xl text-brown-500'/>asian</Link>
                 <Link onClick={resetRed} to='/cuisine/Italian'><GiFullPizza className='m-auto my-2 text-2xl text-red-400'/>italian</Link>
                 </div>
-                <div >
-                    {darkMode ? 
-                                <BiSun onClick={handleClick} className='  icon cursor-pointer text-4xl my-3 text-red-200 '/>:
-                                <BsFillMoonStarsFill onClick={handleClick} className='  icon cursor-pointer text-4xl my-3 text-gray-600 ' /> 
-                     }
-                    <input type="checkbox" name='check' ref={checkRef} className="hidden" />
-                </div>
+                <div className='hidden md:block' ></div>
         </div>
     </div>
   )

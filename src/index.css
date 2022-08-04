@@ -1,6 +1,7 @@
 
 @tailwind base;
 @tailwind components;
+@tailwind utilities;
 
 @font-face {
     font-family: 'Amiri';
@@ -10,5 +11,13 @@
 body{
     font-family: 'Amiri';
 }
-@tailwind utilities;
+
+.card{
+    @apply dark:bg-darkbg-card text-center py-5 rounded before:content-[''] before:w-full before:h-1 before:top-0 relative before:absolute before:left-0 overflow-hidden ;
+}
+
+.card-sm{
+    @apply  dark:bg-darkbg-card flex flex-col gap-3 p-6 m-2 
+}
+
 

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import{ ImSpoonKnife } from 'react-icons/im'
 import {AiFillHome ,AiOutlineClose } from 'react-icons/ai'
 import { GiHamburgerMenu , GiHamburger , GiNoodles , GiFullPizza , GiSheep } from 'react-icons/gi'
 import{Link, } from 'react-router-dom'
@@ -16,7 +16,7 @@ const NvaRes = ({showMenu , active , setActive}) => {
   }
   return (
     <div className=''>
-         <div className="md:hidden ">
+         <div className="md:hidden">
                 {active ?<AiOutlineClose className='text-4xl text-gray-500 cursor-pointer' onClick={showMenu}  /> : <GiHamburgerMenu onClick={showMenu}   className='text-4xl text-gray-500 cursor-pointer '/>} 
         </div>
         {active && 
@@ -29,6 +29,7 @@ const NvaRes = ({showMenu , active , setActive}) => {
          <Link onClick={resetRed} className='flex items-center gap-2 text-2xl ' to='/cuisine/Middle Eastern'><GiSheep className='  text-2xl text-amber-600'/>arabian</Link>
         </ul>
         }
+
     </div>
   )
 }

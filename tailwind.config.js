@@ -8,7 +8,14 @@ module.exports = {
       container:{
         center:true ,
         padding:'1rem' ,
-      },   
+      },  
+      colors:{
+          darkbg:{
+            DEFAULT:"#20222f",
+            card:"#252b43",
+            dark:"#1d2029"
+          }
+      } 
     },
     screens: {
       'sm': '320px',
