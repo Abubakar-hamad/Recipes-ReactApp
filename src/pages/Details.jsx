@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import React from 'react'
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -14,9 +15,14 @@ const Details = () => {
         dispatch(getDetails(id))
     } , [dispatch  , id ])
 
-    console.log(cuisineDetail);
+
     return (
-    <div className='container my-10'>
+    <motion.div 
+    animate={{opacity:1}}
+    initial ={{opacity:0}}
+    exit ={{opacity:0}}
+    transition ={{duration:0.5}}
+    className='container my-10'>
         <div className="grid md:grid-cols-2 sm:grid-col-1 gap-4">
             <div className="img">
                 <img className='rounded-xl' src={cuisineDetail.image} alt="" />
@@ -39,7 +45,7 @@ const Details = () => {
                 </div>
             </div>
         </div>
-    </div>
+    </motion.div>
   )
 }
 

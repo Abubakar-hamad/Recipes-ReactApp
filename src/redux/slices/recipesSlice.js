@@ -46,6 +46,7 @@ export const getDessert = createAsyncThunk('recipe/dessert' , async(data , thunk
     try {
         const res = await axios.get(`${API_URI}&tags=dessert`)
         const info = res.data.recipes
+        localStorage.setItem('dessert' , JSON.stringify(info))
         return info
     } catch (error) {
        const message = (error.data && error.response && error.response.data && error.response.data.message) || error.message || error.toString()

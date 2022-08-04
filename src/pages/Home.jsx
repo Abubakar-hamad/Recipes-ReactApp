@@ -5,6 +5,7 @@ import { getDessert, GetRecipes, getVeggi, reset } from '../redux/slices/recipes
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css/skyblue';
 import Spinner from '../components/Spinner';
+import { motion, useScroll } from "framer-motion"
 
 
 function Home() {
@@ -12,6 +13,7 @@ function Home() {
   
   const { isLoading , isSuccess  , isError  , message ,recipes , veggi , dessert} = useSelector(state => state.recip)
  
+
 
 
 
@@ -43,7 +45,12 @@ function Home() {
     } 
   
   return (
-      <div>
+    <motion.div
+           animate={{opacity:1}}
+           initial ={{opacity:0}}
+           exit ={{opacity:0}}
+           transition ={{duration:0.5}}
+          >
         <div className=" bg-[url('./assets/cover.jpg')] bg-cover bg-center h-96 justify-center bg-fixed items-center flex flex-col gap-2 relative ">
            
           <div className="container gap-9 grid items-center justify-center text-center ">
@@ -126,7 +133,7 @@ function Home() {
           </Splide>
           </div>
         </div>
-      </div>
+      </motion.div>
   )
 }
 

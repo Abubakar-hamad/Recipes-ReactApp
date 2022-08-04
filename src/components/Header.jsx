@@ -49,16 +49,16 @@ function Header() {
              <div className="md:hidden">
               
                 {/* className="md:hidden text-4xl text-gray-600 my-4 sm:inline " */}
-                    <NvaRes showMenu={showMenu} active={active} className='md:hidden sm:flex ' />
+                    <NvaRes showMenu={showMenu} active={active} setActive={setActive} className='md:hidden sm:flex ' />
                     
                 </div>
                 <div className="capitalize gap-9 items-start text-center justify-center hidden  md:block md:flex">
                 
                 <Link onClick={resetRed} to='/'><AiFillHome className='mx-auto my-2 text-2xl text-green-500' />home</Link>
+                <Link onClick={resetRed} to='/cuisine/Middle Eastern'><GiSheep className='m-auto my-2 text-2xl text-amber-600'/>arabian</Link>
                 <Link onClick={resetRed} to='/cuisine/American'><GiHamburger className='m-auto my-2 text-2xl text-yellow-500'/>american</Link>
                 <Link onClick={resetRed} to='/cuisine/Chinese'><GiNoodles className='m-auto my-2 text-2xl text-brown-500'/>asian</Link>
                 <Link onClick={resetRed} to='/cuisine/Italian'><GiFullPizza className='m-auto my-2 text-2xl text-red-400'/>italian</Link>
-                <Link onClick={resetRed} to='/cuisine/Middle Eastern'><GiSheep className='m-auto my-2 text-2xl text-amber-600'/>arabian</Link>
                 </div>
                 <div >
                     {darkMode ? 

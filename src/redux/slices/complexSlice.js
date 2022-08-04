@@ -3,6 +3,9 @@ import axios from "axios";
 
 
 
+
+
+
 const API_URI  = `https://api.spoonacular.com/recipes/`
 
 // const API_GET_URI = `https://api.spoonacular.com/recipes/${id}/information`
@@ -18,9 +21,9 @@ const initialState = {
 }
 export const getCuisine = createAsyncThunk('cuisine/get' , async(payload , data ,  thunkAPI )=>{
         try {
-            const res = await axios.get(`${API_URI}complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${payload} `, data)
+            const res = await axios.get(`${API_URI}complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&number=12&cuisine=${payload} `, data)
             const info =  res.data.results
-
+            localStorage.setItem(`${payload}` , JSON.stringify(info))
             return info
         } catch (error) {
             const mss = (error.data  && error.response && error.response.data) || error.message || error.toString();
@@ -32,6 +35,7 @@ export const getDetails = createAsyncThunk('cuisine/detail', async(payload , dat
     try {
         const res = await axios.get(`${API_URI}${payload}/information?apiKey=${process.env.REACT_APP_API_KEY}` , data)
         console.log(res.data);
+        
         return res.data
     } catch (error) {
         const mss = (error.data  && error.response && error.response.data) || error.message || error.toString();

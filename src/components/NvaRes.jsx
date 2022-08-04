@@ -7,11 +7,12 @@ import { reset } from '../redux/slices/complexSlice'
 import { useDispatch } from 'react-redux'
 
 
-const NvaRes = ({showMenu , active}) => {
+const NvaRes = ({showMenu , active , setActive}) => {
   const dispatch = useDispatch()
 
   const resetRed =()=>{
       dispatch(reset())
+      setActive(!active)
   }
   return (
     <div className=''>
