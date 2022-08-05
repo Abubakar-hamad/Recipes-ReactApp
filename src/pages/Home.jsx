@@ -6,10 +6,11 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css/skyblue';
 import Spinner from '../components/Spinner';
 import { motion, useScroll } from "framer-motion"
+import { useNavigate } from 'react-router-dom';
 
 
 function Home() {
-
+  const navigate  = useNavigate()
   const DarkMode = localStorage.getItem('DarkMode') 
   if(DarkMode ==! ''){
 
@@ -75,11 +76,9 @@ function Home() {
             { recipes ?
               recipes.map(recip =>{
                   return(
-                    <SplideSlide key={recip.id} className='h-56'>
-                      <img className='rounded-md h-full w-full' src={recip.image} alt="" />
-                      <div className='absolute md:text-xl sm:text-sm text-center justify-center items-center bottom-5 w-full bg-gray-300 bg-opacity-50 ' >
-                        <p>{recip.title}</p>
-                      </div>
+                    <SplideSlide onClick={()=> navigate(`/cuisine/${recip.id}/info`) }   key={recip.id}  className=' relative  cursor-pointer h-56 '>
+                      <img  className='rounded-md h-full w-full absolute inset-0  ' src={recip.image} alt="" />
+                      <p className='absolute overflow-hidden md:text-xl sm:text-sm text-center justify-center hover:scale-110  transition-all items-center inset-x-10 h-fit bottom-8 bg-gray-300 bg-opacity-75'>{recip.title}</p>
                     </SplideSlide >
                   )
               })
@@ -101,12 +100,10 @@ function Home() {
             { veggi ?
               veggi.map(veg =>{
                   return(
-                    <SplideSlide key={veg.id} className='h-56'>
-                      <img className='rounded-md h-full w-full' src={veg.image} alt="" />
-                      <div className='absolute md:text-xl sm:text-sm text-center justify-center items-center bottom-5 w-full bg-gray-300 bg-opacity-50 ' >
-                        <p>{veg.title}</p>
-                      </div>
-                    </SplideSlide>
+                    <SplideSlide onClick={()=> navigate(`/cuisine/${veg.id}/info`) }   key={veg.id}  className=' cursor-pointer  h-56'>
+                     <img  className='rounded-md h-full w-full  ' src={veg.image} alt="" />
+                     <p className='absolute overflow-hidden md:text-xl sm:text-sm text-center justify-center items-center inset-x-10 h-fit bottom-8 hover:scale-110  transition-all bg-gray-300 bg-opacity-75'>{veg.title}</p>
+                    </SplideSlide >
                   )
               })
               :
@@ -126,12 +123,10 @@ function Home() {
             { dessert ?
               dessert.map(dess =>{
                   return(
-                    <SplideSlide key={dess.id} className='h-56'>
-                      <img className='rounded-md h-full w-full' src={dess.image} alt="" />
-                      <div className='absolute md:text-xl sm:text-sm text-center justify-center items-center bottom-5 w-full bg-gray-300 bg-opacity-50 ' >
-                        <p>{dess.title}</p>
-                      </div>
-                    </SplideSlide>
+                    <SplideSlide onClick={()=> navigate(`/cuisine/${dess.id}/info`) } key={dess.id}  className=' cursor-pointer  h-56'>
+                     <img  className='rounded-md h-full w-full  ' src={dess.image} alt="" />
+                     <p className='absolute overflow-hidden md:text-xl sm:text-sm text-center justify-center items-center inset-x-10 h-fit bottom-8 hover:scale-110  transition-all bg-gray-300 bg-opacity-75'>{dess.title}</p>
+                    </SplideSlide >
                   )
               })
               :
