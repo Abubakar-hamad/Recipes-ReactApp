@@ -69,7 +69,7 @@ function Home() {
        </div>
     {/* ppular */}
        <div className='md:container sm:w-85 sm:px-3 my-24 '>
-          <h3 className =' shadow-xl shadow-orange-200/50  text-4xl text-center py-4 my-2 bg-gradient-to-b from-orange-300 to-gray-300'>Popular Food</h3>
+          <h3 className =' shadow-xl shadow-orange-200/50  text-4xl text-center py-4 my-4 bg-gradient-to-b from-orange-300 to-gray-300'>Popular Food</h3>
 
           <div className=" md:container  ">
           <Splide  options={optionSlide} >
@@ -116,7 +116,7 @@ function Home() {
        {/* candy */}
 
        <div className='md:container  sm:w-85 sm:px-3 my-24 '>
-          <h3 className =' shadow-xl shadow-orange-200/50  text-4xl text-center py-4 my-2 bg-gradient-to-b from-orange-300 to-gray-300'>Dessert</h3>
+          <h3 className =' shadow-xl shadow-orange-200/50  text-4xl text-center py-4 my-4 bg-gradient-to-b from-orange-300 to-gray-300'>Dessert</h3>
 
           <div className=" md:container ">
           <Splide  options={optionSlide} >
