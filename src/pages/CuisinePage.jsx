@@ -51,13 +51,13 @@ const CuisinePage = ()=> {
     transition ={{duration:0.5}}
     className='md:container sm:px-5 gap-3 '>
         <h3 className='bg-gradient-to-r from-orange-500 to-gray-300  text-white p-5 my-10 text-3xl md:p-3'>{payload} Food </h3>
-        <div className="grid md:grid-cols-4 sm:grid-cols-2 sm:gap-2 md:gap-10 ">
+        <div className="grid md:grid-cols-4 sm:grid-cols-2 sm:gap-2 md:gap-10	 ">
             
         { cuisinex ?
               slice.map((item , index) =>{
                   return(
-               <Link to={`/cuisine/${item.id}/info`} key={item.id} className=' hover:scale-105 transition-all cursor-pointer my-4 md:grid sm:grid text-center bg-gradient-to-b from-orange-300 to-gray-300 rounded-xl p-2   dark:bg-slate-800'>
-                        <img className="w-full h-48 md:h-auto rounded-xl " src={item.image} alt="" width="384" height="512" />
+               <Link to={`/cuisine/${item.id}/info`} key={item.id} className=' shadow-xl shadow-black/50  hover:scale-105 transition-all cursor-pointer my-4 md:grid sm:grid text-center bg-gradient-to-b from-orange-300 to-gray-300 rounded-xl p-2 '>
+                        <img className="w-full h-48 md:h-auto rounded-xl  " src={item.image} alt="" width="384" height="512" />
                          <div className="pt-6 md:p-8 text-center md:text-left space-y-4">
                     
                              <p className="text-lg font-bold"> {item.title} </p>
@@ -78,7 +78,7 @@ const CuisinePage = ()=> {
                {
                 isGre ?
                 <>
-                 <div onClick={showMore} className='flex gap-2 justify-center  items-center bg-gradient-to-b from-gray-500 to-orange-300  my-10 w-72 mx-auto h-12 rounded-md opacity-50 hover:opacity-80 transition-opacity cursor-pointer'>
+                 <div onClick={showMore} className='  shadow-md shadow-red-500/50 flex gap-2 justify-center  items-center bg-gradient-to-b from-gray-500 to-orange-300  my-10 w-72 mx-auto h-12 rounded-md opacity-50 hover:opacity-80 transition-opacity cursor-pointer'>
                     <span>
                     More
                     </span>

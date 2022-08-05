@@ -62,14 +62,14 @@ function Home() {
         <div className=" bg-[url('./assets/cover3.jpg')] bg-cover bg-center h-96 justify-center bg-fixed items-center flex flex-col gap-2 relative ">
            
           <div className="container gap-9 grid items-center justify-center text-center ">
-          <h2 className="text-5xl text-gray-900 bg-orange-300 bg-opacity-75  p-1 rounded-lg" >  Recipes Food</h2>
-           <h2 className="text-5xl text-gray-900 bg-orange-300 bg-opacity-75  p-1 rounded-lg" > From every where in The World</h2>
+          <h2 className="text-5xl shadow-xl shadow-black text-gray-900 bg-orange-300 bg-opacity-75  p-1 rounded-lg" >  Recipes Food</h2>
+           <h2 className="text-5xl shadow-xl shadow-black text-gray-900 bg-orange-300 bg-opacity-75  p-1 rounded-lg" > From every where in The World</h2>
           </div>
           
        </div>
     {/* ppular */}
        <div className='md:container sm:w-85 sm:px-3 my-24 '>
-          <h3 className ='text-4xl text-center py-4 my-2 bg-gradient-to-b from-orange-300 to-gray-300'>Popular Food</h3>
+          <h3 className =' shadow-xl shadow-orange-200/50  text-4xl text-center py-4 my-2 bg-gradient-to-b from-orange-300 to-gray-300'>Popular Food</h3>
 
           <div className=" md:container  ">
           <Splide  options={optionSlide} >
@@ -93,7 +93,7 @@ function Home() {
        {/* vegg */}
 
         <div className=' md:container  sm:w-85 sm:px-3 my-24'>
-          <h3 className ='text-4xl text-center py-4 my-2 bg-gradient-to-b from-orange-300 to-gray-300'>Vagatarian Food</h3>
+          <h3 className ='shadow-xl shadow-orange-200/50  text-4xl text-center py-4 my-4 bg-gradient-to-b from-orange-300 to-gray-300'>Vagatarian Food</h3>
 
           <div className=" md:container ">
           <Splide  options={optionSlide} >
@@ -116,7 +116,7 @@ function Home() {
        {/* candy */}
 
        <div className='md:container  sm:w-85 sm:px-3 my-24 '>
-          <h3 className ='text-4xl text-center py-4 my-2 bg-gradient-to-b from-orange-300 to-gray-300'>Dessert</h3>
+          <h3 className =' shadow-xl shadow-orange-200/50  text-4xl text-center py-4 my-2 bg-gradient-to-b from-orange-300 to-gray-300'>Dessert</h3>
 
           <div className=" md:container ">
           <Splide  options={optionSlide} >
