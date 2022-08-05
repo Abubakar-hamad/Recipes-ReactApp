@@ -78,7 +78,7 @@ function Home() {
                   return(
                     <SplideSlide onClick={()=> navigate(`/cuisine/${recip.id}/info`) }   key={recip.id}  className=' relative  cursor-pointer h-56 '>
                       <img  className='rounded-md h-full w-full absolute inset-0  ' src={recip.image} alt="" />
-                      <p className='absolute overflow-hidden md:text-xl sm:text-sm text-center justify-center items-center md:inset-x-10 sm:inset-x-5   h-fit bottom-8 hover:scale-105  transition-all bg-gray-300 bg-opacity-75'>{recip.title}</p>
+                      <p className='absolute overflow-hidden md:text-xl sm:text-sm text-center justify-center items-center md:inset-x-10 sm:inset-x-2   h-fit bottom-8 hover:scale-105  transition-all bg-gray-300 bg-opacity-75'>{recip.title}</p>
                     </SplideSlide >
                   )
               })
@@ -102,7 +102,7 @@ function Home() {
                   return(
                     <SplideSlide onClick={()=> navigate(`/cuisine/${veg.id}/info`) }   key={veg.id}  className=' cursor-pointer  h-56'>
                      <img  className='rounded-md h-full w-full  ' src={veg.image} alt="" />
-                     <p className='absolute overflow-hidden md:text-xl sm:text-sm text-center justify-center items-center md:inset-x-10 sm:inset-x-5   h-fit bottom-8 hover:scale-105  transition-all bg-gray-300 bg-opacity-75'>{veg.title}</p>
+                     <p className='absolute overflow-hidden md:text-xl sm:text-sm text-center justify-center items-center md:inset-x-10 sm:inset-x-2   h-fit bottom-8 hover:scale-105  transition-all bg-gray-300 bg-opacity-75'>{veg.title}</p>
                     </SplideSlide >
                   )
               })
@@ -125,7 +125,7 @@ function Home() {
                   return(
                     <SplideSlide onClick={()=> navigate(`/cuisine/${dess.id}/info`) } key={dess.id}  className=' cursor-pointer  h-56'>
                      <img  className='rounded-md h-full w-full  ' src={dess.image} alt="" />
-                     <p className='absolute overflow-hidden md:text-xl sm:text-sm text-center justify-center items-center md:inset-x-10 sm:inset-x-5   h-fit bottom-8 hover:scale-105  transition-all bg-gray-300 bg-opacity-75'>{dess.title}</p>
+                     <p className='absolute overflow-hidden md:text-xl sm:text-sm text-center justify-center items-center md:inset-x-10 sm:inset-x-2   h-fit bottom-8 hover:scale-105  transition-all bg-gray-300 bg-opacity-75'>{dess.title}</p>
                     </SplideSlide >
                   )
               })
