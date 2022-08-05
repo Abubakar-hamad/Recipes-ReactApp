@@ -2,7 +2,7 @@
   "name": "recipes",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Abubakar-hamad.github.io",
+  "homepage": ".",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.3",
     "@splidejs/react-splide": "^0.7.8",

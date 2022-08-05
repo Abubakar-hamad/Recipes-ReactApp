@@ -1,15 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-    font-family: 'Amiri';
-    src: local('Amiri') , url(./assets/font/AmirCAiro-Regular.ttf)
-}
+
 
 body{
-    font-family: 'Amiri';
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+
 }
 
 .card{
