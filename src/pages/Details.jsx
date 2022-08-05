@@ -10,8 +10,7 @@ const Details = () => {
     const id = param.id
     const {cuisineDetail , isLoading , isSuccess  , isError , message} = useSelector(state => state.cuis)
     const dispatch = useDispatch();
-    useEffect(()=>{
-       
+    useEffect(()=>{   
         dispatch(getDetails(id))
     } , [dispatch  , id ])
 
@@ -33,18 +32,19 @@ const Details = () => {
                     <div className="md:grid grid-cols-2 gap-4">
                     <p className='my-2'><b>Health Score : </b>{cuisineDetail.healthScore}</p>
                     <p className='my-2'><b>Vegetarian : </b>{cuisineDetail.vegetarian ? 'YES' : 'NO'}</p>
-                    <p className='my-2'><b>veryPopular : </b>{cuisineDetail.veryPopular ? 'YES' : 'NO'}</p>
-                    <p className='my-2'><b>cuisines : </b>{cuisineDetail.cuisines ? cuisineDetail.cuisines.map(i=> i)+"" : '- | - | -'}</p>
+                    <p className='my-2'><b>Popular : </b>{cuisineDetail.veryPopular ? 'YES' : 'NO'}</p>
+                    <p className='my-2'><b>cuisines : </b>{cuisineDetail.cuisines ? cuisineDetail.cuisines.map(i=> i)+"" : '---'}</p>
                     </div>
                 </div>
                 <hr />
                 <div className="desc p-4 bg-gradient-to-r from-orange-50 to-gray-50 ">
                 <h1>{cuisineDetail.instructions}</h1>
-                <h1>{cuisineDetail.title}</h1>
+               
 
                 </div>
             </div>
         </div>
+
     </motion.div>
   )
 }
