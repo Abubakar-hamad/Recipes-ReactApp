@@ -43,7 +43,7 @@ function Header() {
     }
   return (
 
-    <div className='bg-gray-100'>
+    <div className='bg-gray-100 shadow-md shadow-black/25'>
         <div className="header container flex sm:flex sm:justify-between sm:items-center md:flex py-5 justify-between  items-center">
                 <div  className="flex items-center gap-1 cursor-pointer"  onClick={()=> navigate('/') }>
                     <ImSpoonKnife className=' text-5xl bg-gradient-to-t from-orange-300 to-red-500 rounded-full p-2 text-white  hover:animate-spin ' />

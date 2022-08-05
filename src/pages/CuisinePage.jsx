@@ -50,7 +50,7 @@ const CuisinePage = ()=> {
     exit ={{opacity:0}}
     transition ={{duration:0.5}}
     className='md:container sm:px-5 gap-3 '>
-        <h3 className='bg-gradient-to-r from-orange-500 to-gray-300  text-white p-5 my-10 text-3xl md:p-3'>{payload} Food </h3>
+        <h3 className='bg-gradient-to-r from-orange-500 ove via-gray-200 to-gray-50  text-white  p-5 my-10 text-3xl md:p-3'>{payload} Food </h3>
         <div className="grid md:grid-cols-4 sm:grid-cols-2 sm:gap-2 md:gap-10	 ">
             
         { cuisinex ?

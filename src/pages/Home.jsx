@@ -48,7 +48,8 @@ function Home() {
       gap:'.5rem' ,
       perPage: 3,
       // pagination:false ,
-      arrows:false
+      arrows:false , 
+      
     } 
   
   return (
@@ -69,7 +70,7 @@ function Home() {
        </div>
     {/* ppular */}
        <div className='md:container sm:w-85 sm:px-3 my-24 '>
-          <h3 className =' shadow-xl shadow-orange-200/50  text-4xl text-center py-4 my-4 bg-gradient-to-b from-orange-300 to-gray-300'>Popular Food</h3>
+          <h3 className =' animate-pulse hover:animate-bounce cursor-pointer shadow-xl shadow-orange-200/50  text-4xl text-center p-3 rounded-lg  my-4 w-fit bg-gradient-to-b from-orange-300 to-gray-300'>Popular Food</h3>
 
           <div className=" md:container  ">
           <Splide  options={optionSlide} >
@@ -89,11 +90,11 @@ function Home() {
           </div>
         </div>
            
-       
+
        {/* vegg */}
 
         <div className=' md:container  sm:w-85 sm:px-3 my-24'>
-          <h3 className ='shadow-xl shadow-orange-200/50  text-4xl text-center py-4 my-4 bg-gradient-to-b from-orange-300 to-gray-300'>Vagatarian Food</h3>
+          <h3 className ='animate-pulse hover:animate-bounce cursor-pointer shadow-xl shadow-orange-200/50  text-4xl text-center p-3 rounded-lg  my-4 w-fit bg-gradient-to-b from-orange-300 to-gray-300'>Vagatarian Food</h3>
 
           <div className=" md:container ">
           <Splide  options={optionSlide} >
@@ -113,10 +114,11 @@ function Home() {
           </div>
         </div>
 
+ 
        {/* candy */}
 
        <div className='md:container  sm:w-85 sm:px-3 my-24 '>
-          <h3 className =' shadow-xl shadow-orange-200/50  text-4xl text-center py-4 my-4 bg-gradient-to-b from-orange-300 to-gray-300'>Dessert</h3>
+          <h3 className ='animate-pulse hover:animate-bounce cursor-pointer shadow-xl shadow-orange-200/50  text-4xl text-center p-3 rounded-lg  my-4 w-fit bg-gradient-to-b from-orange-300 to-gray-300'>Dessert</h3>
 
           <div className=" md:container ">
           <Splide  options={optionSlide} >
