@@ -1,15 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.bc2e351a.css",
+    "main.css": "/static/css/main.d08f68bc.css",
     "main.js": "/static/js/main.e0c71ee8.js",
     "static/media/cover3.jpg": "/static/media/cover3.5d972a5505d754dc5bb2.jpg",
-    "static/media/AmirCAiro-Regular.ttf": "/static/media/AmirCAiro-Regular.64b7f6f903681ee8f2ef.ttf",
     "index.html": "/index.html",
-    "main.bc2e351a.css.map": "/static/css/main.bc2e351a.css.map",
+    "main.d08f68bc.css.map": "/static/css/main.d08f68bc.css.map",
     "main.e0c71ee8.js.map": "/static/js/main.e0c71ee8.js.map"
   },
   "entrypoints": [
-    "static/css/main.bc2e351a.css",
+    "static/css/main.d08f68bc.css",
     "static/js/main.e0c71ee8.js"
   ]
 }
